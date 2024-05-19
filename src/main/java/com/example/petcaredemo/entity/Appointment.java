@@ -6,17 +6,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
-@Table(name = "roles", uniqueConstraints = @UniqueConstraint(name = "unique_roles", columnNames = "name"))
+@Table(name = "appointment")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Role {
+public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
+    private LocalDateTime date;
+    @OneToOne
+    private PetOwner petOwner;
+    @OneToOne
+    private VeterinaryOffice veterinaryOffice;
 
-    @Enumerated(EnumType.STRING)
-    private ERole name;
 }
