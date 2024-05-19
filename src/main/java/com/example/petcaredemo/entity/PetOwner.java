@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "pet_owners")
 @NoArgsConstructor
@@ -20,5 +22,7 @@ public class PetOwner {
 
     @OneToOne
     private User user;
+    @OneToMany(mappedBy = "petowner", fetch = FetchType.LAZY)
+    private List<Pet> pets;
 
 }

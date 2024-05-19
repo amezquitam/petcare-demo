@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "appointment")
+@Table(name = "appointments")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -24,5 +24,9 @@ public class Appointment {
     private PetOwner petOwner;
     @OneToOne
     private VeterinaryOffice veterinaryOffice;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private AppointmentStatus status;
+
 
 }

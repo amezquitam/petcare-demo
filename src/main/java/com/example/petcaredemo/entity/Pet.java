@@ -27,6 +27,6 @@ public class Pet {
     @Column
     private Integer age;
 
-    @OneToOne
+    @ManyToOne
     private PetOwner owner;
 }
