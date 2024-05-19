@@ -22,7 +22,7 @@ public class PetOwner {
 
     @OneToOne
     private User user;
-    @OneToMany(mappedBy = "petowner", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     private List<Pet> pets;
 
 }
