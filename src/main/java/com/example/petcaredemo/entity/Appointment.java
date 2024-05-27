@@ -1,5 +1,6 @@
 package com.example.petcaredemo.entity;
 
+import com.example.petcaredemo.enums.AppointmentStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,15 +19,18 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column
     private LocalDateTime date;
+
     @OneToOne
     private PetOwner petOwner;
+
     @OneToOne
     private VeterinaryOffice veterinaryOffice;
+
     @Column
     @Enumerated(EnumType.STRING)
     private AppointmentStatus status;
-
 
 }

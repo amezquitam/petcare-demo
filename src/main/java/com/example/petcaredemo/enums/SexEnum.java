@@ -1,4 +1,4 @@
-package com.example.petcaredemo.entity;
+package com.example.petcaredemo.enums;
 
 public enum SexEnum {
     FEMALE,

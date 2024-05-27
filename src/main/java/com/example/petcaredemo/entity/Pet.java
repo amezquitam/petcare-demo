@@ -1,5 +1,6 @@
 package com.example.petcaredemo.entity;
 
+import com.example.petcaredemo.enums.SexEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,9 @@ public class Pet {
     @Column
     @Enumerated(EnumType.STRING)
     private SexEnum sex;
+
+    @Column
+    private String genre;
 
     @Column
     private Integer age;
